@@ -11,4 +11,4 @@ List Project:
 Command: SHOW [FULL] DATABASES
 WHERE type = 'project';
 Error: SQL statement cannot be parsed by mindsdb_sql - SHOW [FULL] DATABASES
-WHERE type = 'project' : Syntax error at token LBRACKET: "["
+WHERE type = 'project': Syntax error at token LBRACKET: "["
