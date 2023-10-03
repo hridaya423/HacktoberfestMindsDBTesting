@@ -2,7 +2,8 @@ List Data Handlers:<br/>
 Command: SHOW HANDLERS
 WHERE type = 'data';
 <br/>
-Result: Passed
+Result: ![image](https://github.com/hridaya423/HacktoberfestMindsDBTesting/assets/66767013/6381ca11-18fd-4652-9b0d-2e8418b92ec1)
+
 <br/>
 
 Connect a Data Source:
@@ -32,7 +33,8 @@ List Datasources:
 <br/>
 Command: SHOW DATABASES;
 <br/> 
-Result: Pass
+Result: ![image](https://github.com/hridaya423/HacktoberfestMindsDBTesting/assets/66767013/25ec1783-a782-47f2-b274-87aa583a4eea)
+
 <br/>
 
 Use a Datasource:
