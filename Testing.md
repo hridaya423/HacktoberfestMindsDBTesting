@@ -1,14 +1,15 @@
 Create Project:
-Command: CREATE PROJECT test;
-Result: Query successfully completed
+<br/>
+Command: CREATE PROJECT test;<br/>
+Result: Query successfully completed<br/>
 
-Delete Project:
-Command: DROP PROJECT test;
-Result: Query successfully completed
+Delete Project:<br/>
+Command: DROP PROJECT test;<br/>
+Result: Query successfully completed<br/>
 
 
-List Project:
+List Project:<br/>
 Command: SHOW [FULL] DATABASES
-WHERE type = 'project';
+WHERE type = 'project';<br/>
 Error: SQL statement cannot be parsed by mindsdb_sql - SHOW [FULL] DATABASES
 WHERE type = 'project': Syntax error at token LBRACKET: "["
