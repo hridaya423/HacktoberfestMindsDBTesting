@@ -1,92 +1,59 @@
-# Welcome to the MindsDB Manual QA Testing for Cohere Handler
-
 > **Please submit your PR in the following format after the underline below `Results` section. Don't forget to add an underline after adding your changes i.e., at the end of your `Results` section.**
 
 ## Testing Cohere Handler
 **1. Testing Detect Language**
 
 ```
-CREATE MODEL mindsdb.cohere_language_detector
-PREDICT language
-USING
-  task = 'language-detection',
-  column = 'Dobrý den, doufám, že se vám daří dobře',
-  engine = 'cohere',
-  api_key = 'MY_API_KEY'
+
 ```
 
-![CREATE_DATABASE](https://github.com/hridaya423/HacktoberfestMindsDBTesting/assets/66767013/0f010dc8-8948-438b-995c-081a47182e9a)
+
+
+### Querying the detect language:
+```
+
+```
+
+
+
+
 
 **2. Testing Summarize**
 
 ```
+CREATE MODEL mindsdb.cohere_text_summarization
+PREDICT summary
+USING
+task = 'text-summarization',
+column = 'The tower is 330 metres (1,083 ft) tall,[6] about the same height as an 81-storey building, and the tallest structure in Paris. Its base is square, measuring 125 metres (410 ft) on each side. During its construction, the Eiffel Tower surpassed the Washington Monument to become the tallest human-made structure in the world, a title it held for 41 years until the Chrysler Building in New York City was finished in 1930. It was the first structure in the world to surpass both the 200-metre and 300-metre mark in height. Due to the addition of a broadcasting aerial at the top of the tower in 1957, it is now taller than the Chrysler Building by 5.2 metres (17 ft). Excluding transmitters, the Eiffel Tower is the second tallest free-standing structure in France after the Millau Viaduct. The tower has three levels for visitors, with restaurants on the first and second levels.He decorated it with furniture by Jean Lachaise and invited friends such as Thomas Edison.',
+engine = 'cohere',
+api_key = 'MY API KEY'
 
 ```
 
-![CREATE_PREDICTOR](Image URL of the screenshot)
+
+![CREATE_PREDICTOR](https://github.com/hridaya423/HacktoberfestMindsDBTesting/assets/66767013/83c25ebe-8b3c-4e0b-81cf-d5bcf585f305)
 
 **3. Testing Generate**
 
 ```
-COMMAND THAT YOU RAN TO DO A SELECT FROM.
+CREATE MODEL mindsdb.cohere_text_generation
+PREDICT next_text
+USING
+  task = 'text-generation',
+  column = 'Once upon a time, there was',
+  engine = 'cohere',
+  api_key = 'MY API KEY'
 ```
 
-![SELECT_FROM](Image URL of the screenshot)
+![image](https://github.com/hridaya423/HacktoberfestMindsDBTesting/assets/66767013/0c5dc602-7b6d-4bdc-81a4-6315ac4b7c84)
 
-### Results
-
-Drop a remark based on your observation.
-- [ ] Works Great 💚 (This means that all the steps were executed successfuly and the expected outputs were returned.)
-- [ ] There's a Bug 🪲 [Issue Title](URL To the Issue you created) ( This means you encountered a Bug. Please open an issue with all the relevant details with the Bug Issue Template)
-
----
-
-
-## Testing MySQL Handler with [Predictive Maintenance](https://www.kaggle.com/datasets/tolgadincer/predictive-maintenance?select=train.csv)
-
-**1. Testing CREATE DATABASE**
-
-```
-CREATE DATABASE predictMaintenance  
-WITH ENGINE = 'mysql',       
-PARAMETERS = {
-    "user": "root",            
-    "password": "armanchand",    
-    "host": "0.tcp.in.ngrok.io",             
-    "port": "15232",          
-    "database": "predicitveMaintenance"          
-};
-
-```
-<img width="875" alt="Screenshot 2022-10-13 at 6 37 13 PM" src="https://user-images.githubusercontent.com/26898623/195604605-586bf572-7b45-425c-8030-779958701f07.png">
-
-**2. Testing CREATE PREDICTOR**
-
-```
-CREATE PREDICTOR mindsdb.machine_failure_rate_predicotr
-FROM machine_failure                     
-(SELECT * FROM machine_train LIMIT 10000)  
-PREDICT Machine_failure;    
-```
-
-![je3exwn7nbdot9l1hs66](https://user-images.githubusercontent.com/26898623/195608656-26b092ab-7f4a-4bb0-81ba-1cf7d673ce86.jpg)
-
-
-**3. Testing SELECT FROM PREDICTOR**
-
-```
-SELECT Machine_failure
-FROM mindsdb.machine_failure_rate_predictor
-WHERE torque =40;
-```
-
-![eocx8ayd6p036b6sfh6u](https://user-images.githubusercontent.com/26898623/195609435-883ce74e-021f-423b-85cf-158fc0a60b6d.jpg)
 
 
 ### Results
 
 Drop a remark based on your observation.
-- [X] Works Great 💚 (This means that all the steps were executed successfuly and the expected outputs were returned.)
+- [X] Works Great 💚 (This means that all the steps were executed successfuly and the expected outputs were returned.), Improve docs to add cohere installation.
 - [ ] There's a Bug 🪲 [Issue Title](URL To the Issue you created) ( This means you encountered a Bug. Please open an issue with all the relevant details with the Bug Issue Template)
 
 ---
